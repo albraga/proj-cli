@@ -3,9 +3,9 @@ var pm = require('./proj-client-module');
 
 
 vorpal
-    .command('login [url] [models] [username] [password]', 'login(url, models, username, password)')
+    .command('login [url] [model] [username] [password]', 'login(url, model, username, password)')
     .action(function(args, callback) {
-	pm.login(args.url, args.models, args.username, args.password);
+	pm.login(args.url, args.model, args.username, args.password);
 	callback();
     });
 
@@ -16,8 +16,7 @@ vorpal
 	callback();
     });
 
-
 vorpal
-    .delimiter('COMMAND-LINE$')
+    .delimiter('PROJ-CLI:')    
     .show();
 
